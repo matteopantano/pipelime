@@ -1,0 +1,33 @@
+Global:
+  'graph' '{'
+    comment *= Comment
+    connection *= Connection
+  '}'
+;
+
+Connection:
+  node_start=Node
+  port_start=Port
+  port_start_arity=Arity?
+  '->'
+  node_end=Node
+  port_end=Port
+  port_end_arity=Arity?
+  ';'
+;
+
+Port:
+  ':' name=/[A-Za-z0-9_]*/
+;
+
+Arity:
+  '['  idx=/[0-9]*/? name=/'[A-Za-z0-9_]*'/? ']'
+;
+
+Node:
+  name = /[A-Za-z0-9_]*/
+;
+
+Comment:
+  '#' name = /[A-Za-z0-9 _]*/ ';'
+;

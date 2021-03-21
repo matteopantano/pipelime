@@ -8,8 +8,8 @@ from pipelime.tools.idgenerators import IdGeneratorInteger, IdGeneratorUUID
 from pipelime.sequences.pipes import NodeGraph, OperationNode, ReaderNode, WriterNode
 
 
-folder_a = '/home/daniele/Desktop/experiments/2021-02-10.TMLightsExperiments/datasets/tap_00'
-folder_b = '/home/daniele/Desktop/experiments/2021-02-10.TMLightsExperiments/datasets/tap_01'
+folder_a = '/Users/daniele/Downloads/lego_dataset/lego_00'
+folder_b = '/Users/daniele/Downloads/lego_dataset/lego_01'
 
 idg = IdGeneratorUUID()
 subsampling = 1.0
@@ -96,6 +96,6 @@ graph = NodeGraph(nodes=nodes)
 
 
 graph.draw_to_file('/tmp/graph.png')
-os.system('eog /tmp/graph.png')
+os.system('open /tmp/graph.png')
 
 # graph.execute()
